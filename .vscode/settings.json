@@ -1,0 +1,14 @@
+{
+    "emmet.includeLanguages": {
+        "erb": "html",
+        "ruby": "html"
+    },
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+    "emmet.showSuggestionsAsSnippets": true    
+    ,
+    "files.associations": {
+        "*erb": "html"
+    }
+}
