@@ -15,5 +15,18 @@
   <%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
 </p>
 
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+  <div>
+    <strong><%= comment.user_name %></strong>
+    <br>
+    <p><%= comment.body %></p>
+    <span><%= link_to 'Edit', "/ideas/#{@idea.id}/comments/#{comment.id}/edit" %></span> |
+    <span><%= link_to 'Delete', "/ideas/#{@idea.id}/comments/#{comment.id}", method: :delete %></span>
+  </div>
+<% end %>
+<br>
+<%= render 'comments/form', article=@article %>
+
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>
