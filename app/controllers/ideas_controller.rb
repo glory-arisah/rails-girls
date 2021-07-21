@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  require "mini_magick"
   before_action :set_idea, only: %i[ show edit update destroy ]
 
   # GET /ideas or /ideas.json
@@ -10,7 +11,6 @@ class IdeasController < ApplicationController
   def show
     @comments = @idea.comments.all
     @comment = @idea.comments.build
-    puts @comment.body
   end
 
   # GET /ideas/new
